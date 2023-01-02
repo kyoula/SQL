@@ -1,0 +1,40 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, rating TEXT, material TEXT);
+
+INSERT INTO store VALUES
+(01, "Jeans", 35, 5, "Cotton");
+INSERT INTO store VALUES 
+(02, 'Shoes', 50, 4, 'Rubber');
+INSERT INTO store VALUES
+(03, 'Coats', 150, 5, 'Wool');
+INSERT INTO store VALUES
+(04, 'Socks', 5, 3, 'Cotton');
+INSERT INTO store VALUES
+(05, 'Jewlery', 75, 4, 'Metal');
+INSERT INTO store VALUES
+(06, 'Scarves', 15, 2, 'Cotton');
+INSERT INTO store VALUES
+(07, 'Hats', 15, 3, 'Wool');
+INSERT INTO store VALUES
+(08, 'Kids Clothes', 30, 4, 'Cotton');
+INSERT INTO store VALUES
+(09, 'Hats', 45, 3, 'Cotton');
+INSERT INTO store VALUES
+(10, 'Dishes', 50, 4, 'Porcelin');
+INSERT INTO store VALUES
+(11, 'Glasses', 30, 3, 'Glass');
+INSERT INTO store VALUES
+(12, 'Pots', 75, 4, 'Metal');
+INSERT INTO store VALUES
+(13, 'Ornaments', 10, 2, 'Glass');
+INSERT INTO store VALUES
+(14, 'Rain Boots', 65, 5, 'Rubber');
+INSERT INTO store VALUES
+(15, 'Candy', 5, 1, 'Chocolate');
+SELECT * FROM store;
+
+SELECT MAX(price) FROM store;
+SELECT * FROM store ORDER BY price;
+SELECT * FROM store ORDER BY rating;
+SELECT * FROM store WHERE rating > 3;
+
+
