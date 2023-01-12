@@ -1,0 +1,46 @@
+/* GREYS ANATOMY -- Original Cast members, specialty, on most current season as of December 2022 showcasing JOIN table feature */
+
+/* 
+Meredith Grey - General Surgeon - Yes
+Cristina Yang - Cardiothoracic Surgeon - no
+Izzie Stevens - NULL - No
+Alex Karev - Pediatrics - No
+George O'Malley - NULL - No - Deceased
+Miranda Bailey - General Surgeon - Yes
+Richard Webber - General Surgeon - Yes
+Preston Burke - Cardiothoracic Surgeon - No
+Derek Shepherd - Neurosurgery - No - Deceased
+*/
+
+
+CREATE TABLE Original_Greys (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, specialty INTEGER);
+
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Meredith", "Grey", "General");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Cristina", "Yang", "Cardiothoracic");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Izzie", "Stevens", 'NULL');
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Alex", "Karev", "Pediatric");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("George", "OMalley", "NULL");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Miranda", "Bailey", "General");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Richard", "Webber", "General");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Preston", "Burke", "Cardiothoracic");
+INSERT INTO Original_greys (first_name, last_name, specialty) VALUES ("Derek", "Shephard", "Neurosurgery");
+
+CREATE TABLE current_cast (id INTEGER PRIMARY KEY, id_og INTEGER, current TEXT);
+
+INSERT INTO current_cast (id_og, current) VALUES (1, "yes");
+INSERT INTO current_cast (id_og, current) VALUES (2, "no");
+INSERT INTO current_cast (id_og, current) VALUES (3, "no");
+INSERT INTO current_cast (id_og, current) VALUES (4, "no");
+INSERT INTO current_cast (id_og, current) VALUES (5, "no");
+INSERT INTO current_cast (id_og, current) VALUES (6, "yes");
+INSERT INTO current_cast (id_og, current) VALUES (7, "yes");
+INSERT INTO current_cast (id_og, current) VALUES (8, "no");
+INSERT INTO current_cast (id_og, current) VALUES (9, "no");
+
+
+
+SELECT og.first_name, og.last_name, og.specialty, curr.current
+FROM original_greys og
+JOIN current_cast curr
+ON og.id=curr.id_og
+WHERE curr.current = "yes";
